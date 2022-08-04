@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://192.168.43.219:33060/test?serverTimezone=Asia/Shanghai
+    username: root
+management:
+  endpoints:
+    enabled-by-default: true #默认是true
+    web:
+      exposure:
+        include: "*"  #开启全部监控端点
+      base-path: /actuator #自定义监控根路径（/actuator 改为/,此配置只用于更改/actuator这个path节点 ）
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
